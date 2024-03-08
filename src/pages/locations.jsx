@@ -58,7 +58,7 @@ const LocationPage = (props) => {
           <li key={index}>
             -{" "}
             <Link href={`/locations/${locations._id}/edit`}>
-              {locations.title} ({location.description}, {locations.address} )
+              {locations.title} ({locations.description}, {locations.address} )
             </Link>
           </li>
         ))}
