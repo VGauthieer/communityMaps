@@ -1,15 +1,12 @@
+import Logo from "@/components/Logo"
 import "@/styles/globals.css"
-
 import Link from "next/link"
 
 const App = ({ Component, pageProps }) => (
   <main className="flex flex-col">
     <header className="flex justify-left bg-slate-500 border-b gap-4border-b-slate-200">
       <div className="max-w-md p-4 flex items-center gap-5 text-white">
-        <img
-          src="../images/Community_maps_logo.png"
-          alt="Community_maps_logo"
-        />
+        <Logo />
         <Link href="/">Test</Link>
         <Link href="/locations">add a new monument</Link>
         <Link href="/evrything">read everything</Link>
