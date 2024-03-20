@@ -11,10 +11,31 @@ export const getServerSideProps = async () => {
   }
 }
 const HomePage = ({ count }) => (
-  <nav>
-    <Link href="/locations">location</Link>
-    <p>{count}</p>
-  </nav>
+  <>
+    <nav className="flex justify-center flex-col w-full text-center gap-4">
+      <div>
+        <h1 className="text-2xl font-semibold ">
+          Welcome to this community site. The database is filled only by the
+          community.{" "}
+        </h1>
+        <p>Currently there are {count} places on the site</p>
+      </div>
+      <div className="space-x-10">
+        <Link
+          href="/locations"
+          className="bg-indigo-600 active:bg-indigo-700 text-white px-3 py-2 font-semibold"
+        >
+          add a new monument
+        </Link>
+        <Link
+          href="/locations"
+          className="bg-indigo-600 active:bg-indigo-700 text-white px-3 py-2 font-semibold"
+        >
+          add a new monument
+        </Link>
+      </div>
+    </nav>
+  </>
 )
 
 export default HomePage
