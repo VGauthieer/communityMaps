@@ -9,8 +9,14 @@ export const locationSchema = new Schema({
   address: {
     type: String,
   },
+
   description: {
     type: String,
     default: "a house",
+  },
+
+  type: {
+    type: String,
+    default: "",
   },
 })

@@ -20,7 +20,7 @@ const handler = createRoute(async (req, res) => {
 
   // PATCH /locations/[locationId] -> update resource item
   if (req.method === "PATCH") {
-    const { title, description, address } = req.body
+    const { title, description, address, type } = req.body
 
     if (description) {
       location.description = description
@@ -32,6 +32,10 @@ const handler = createRoute(async (req, res) => {
 
     if (address) {
       location.address = address
+    }
+
+    if (type) {
+      location.type = type
     }
 
     await location.save()

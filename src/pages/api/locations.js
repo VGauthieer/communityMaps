@@ -14,11 +14,12 @@ const handler = createRoute(async (req, res) => {
 
   // POST /todos -> create resource
   if (req.method === "POST") {
-    const { title, description, address } = req.body
+    const { title, description, address, type } = req.body
     const newLocation = new LocationModel({
       title,
       address,
       description,
+      type,
     })
 
     await newLocation.save()

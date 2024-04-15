@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export const getServerSideProps = async () => {
   const { data: count } = await axios(
-    `http://localhost:3000/api/location/count`,
+    `http://localhost:3000/api/locations/count`,
   )
 
   return {
@@ -28,10 +28,10 @@ const HomePage = ({ count }) => (
           add a new monument
         </Link>
         <Link
-          href="/locations"
+          href="/evrything"
           className="bg-indigo-600 active:bg-indigo-700 text-white px-3 py-2 font-semibold"
         >
-          add a new monument
+          Go look some things !
         </Link>
       </div>
     </nav>

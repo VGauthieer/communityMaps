@@ -7,7 +7,7 @@ const App = ({ Component, pageProps }) => (
     <header className="flex justify-left bg-slate-500 border-b gap-4border-b-slate-200">
       <div className="max-w-md p-4 flex items-center gap-5 text-white">
         <Logo />
-        <Link href="/">Test</Link>
+        <Link href="/">Community Maps</Link>
         <Link href="/locations">add a new monument</Link>
         <Link href="/evrything">read everything</Link>
       </div>
