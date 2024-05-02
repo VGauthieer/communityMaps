@@ -25,7 +25,7 @@ const evrythingPage = (props) => {
   if (count === 0) {
     return (
 
-      <nav>
+      <nav className="flex justify-center flex-col w-full text-center gap-4">
         <div>
           <h1>There nothing there ! go add sommething</h1>
         </div>
@@ -44,9 +44,9 @@ const evrythingPage = (props) => {
 
 
   return (
-    <nav>
+    <nav className="flex justify-center flex-col w-full text-center gap-4">
       <div>
-        
+
       </div>
     <div>
     <ul className="p-8">

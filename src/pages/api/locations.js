@@ -12,6 +12,15 @@ const handler = createRoute(async (req, res) => {
     return
   }
 
+  if (req.method === "GET") {
+    const { type } = req.query
+    const todos = await LocationModel.find(type ? { type } : {})
+
+    res.send(todos)
+
+    return
+  }
+
   // POST /todos -> create resource
   if (req.method === "POST") {
     const { title, description, address, type } = req.body

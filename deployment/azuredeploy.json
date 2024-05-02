@@ -1,0 +1,43 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {},
+    "variables": {},
+    "resources": [
+        {
+            "name": "projetavetis",
+            "type": "Microsoft.Web/sites",
+            "apiVersion": "2016-08-01",
+            "location": "[resourceGroup().location]",
+            "tags": {
+                "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/communityMaps-plan')]": "Resource",
+                "displayName": "projetavetis"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', 'communityMaps-plan')]"
+            ],
+            "properties": {
+                "name": "projetavetis",
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', 'communityMaps-plan')]"
+            }
+        },
+        {
+    "name": "communityMaps-plan",
+    "type": "Microsoft.Web/serverfarms",
+    "apiVersion": "2018-02-01",
+    "location": "[resourceGroup().location]",
+    "sku": {
+        "name": "F1",
+        "capacity": 1
+    },
+    "tags": {
+        "displayName": "communityMaps-plan"
+    },
+    "properties": {
+        "name": "communityMaps-plan"
+    }
+}
+      
+    ],
+    "outputs": {}
+}

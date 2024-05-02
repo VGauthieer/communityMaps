@@ -1,0 +1,41 @@
+on: [push, pull_request]
+
+env:
+  AZURE_WEBAPP_NAME: "projectavetistest"
+  AZURE_GROUP_NAME: "projectavetis"
+  AZURE_WEBAPP_PACKAGE_PATH: "c:/Users/VincentGAUTHIER/skillport"
+  NODE_VERSION: "21.6.1"
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Setup Node.js
+        uses: actions/setup-node@master
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: build with node
+        run: npm install && npm run build
+
+      - name: node publish
+        run: npm publish ./projectavetistest -c ReleaseTag=1.0.0 -o myapp
+
+      - uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - run: |
+          az group create -n projectavetis -l westeurope
+          az group deployment create -g projectavetis --template-file deployment/azuredeploy.json
+
+      - name: "Azure webapp deploy"
+        uses: azure/webapps-deploy@v1
+        with:
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          package: myapp
+
+      - name: logout
+        run: |
+          az logout
