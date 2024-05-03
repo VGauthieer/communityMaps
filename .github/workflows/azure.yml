@@ -3,7 +3,7 @@ on: [push, pull_request]
 env:
   AZURE_WEBAPP_NAME: "projetavetis"
   AZURE_GROUP_NAME: "projectavetis"
-  AZURE_WEBAPP_PACKAGE_PATH: "c:/Users/VincentGAUTHIER/skillport"
+  AZURE_WEBAPP_PACKAGE_PATH: "c:/Users/VincentGAUTHIER/community_map"
   NODE_VERSION: "21.6.1"
 
 jobs:
