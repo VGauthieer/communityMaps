@@ -19,7 +19,7 @@ jobs:
       - name: build with node
         run: npm install && npm run build
 
-      - uses: azure/login@v1
+      - uses: azure/login@v2
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
