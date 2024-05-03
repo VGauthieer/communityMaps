@@ -34,4 +34,4 @@ jobs:
 
       - name: logout
         run: |
-          az logout
+          az logou
