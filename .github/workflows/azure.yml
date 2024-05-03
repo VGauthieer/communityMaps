@@ -10,9 +10,9 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v4
       - name: Setup Node.js
-        uses: actions/setup-node@master
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
 
@@ -31,7 +31,7 @@ jobs:
           az group deployment create -g projectavetis --template-file deployment/azuredeploy.json
 
       - name: "Azure webapp deploy"
-        uses: azure/webapps-deploy@v1
+        uses: azure/webapps-deploy@v2
         with:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
           package: myapp
