@@ -19,9 +19,6 @@ jobs:
       - name: build with node
         run: npm install && npm run build
 
-      - name: node publish
-        run: npm publish ./projectavetistest -c ReleaseTag=1.0.0 -o myapp
-
       - uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
